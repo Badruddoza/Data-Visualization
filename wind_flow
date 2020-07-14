@@ -15,3 +15,9 @@ ggplot(data=dt,aes(x=x,
   geom_point()+
   geom_spoke(lwd=1,arrow=arrow(length=unit(.2,"cm")))+
   theme_bw()
+
+# But this does not accurately represent the directions due to dissimilar axes
+# a quick and convenient way
+ggplot(data=dt,aes(x=x,y=as.factor(y)))+
+  geom_text(aes(angle=dir,alpha=wm,color=wm),lwd=10,label="→")+
+  theme_bw()
