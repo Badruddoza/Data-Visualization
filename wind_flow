@@ -1,0 +1,17 @@
+# making a wind flow graph
+
+rm(list=ls())
+library(ggplot2)
+
+dt<-data.frame(x=c(1,2,3,4),y=c(1,2,3,4),dir=c(0,1,2,3),wm=c(10,15,9,5))
+
+dt
+
+ggplot(data=dt,aes(x=x,
+              y=as.factor(y),
+              color=wm,
+              angle=dir,
+              radius=scales::rescale(wm,c(.3,.6))))+
+  geom_point()+
+  geom_spoke(lwd=1,arrow=arrow(length=unit(.2,"cm")))+
+  theme_bw()
