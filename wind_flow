@@ -21,3 +21,9 @@ ggplot(data=dt,aes(x=x,
 ggplot(data=dt,aes(x=x,y=as.factor(y)))+
   geom_text(aes(angle=dir,alpha=wm,color=wm),lwd=10,label="→")+
   theme_bw()
+
+# the arrow sign can be coded
+ggplot(data=dt,aes(x=x,y=as.factor(y)))+
+  geom_text(aes(angle=dir,alpha=wm,color=wm),lwd=10,label=sprintf('\u2191'))+
+  theme_bw()
+
