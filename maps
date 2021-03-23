@@ -1,14 +1,17 @@
+rm(list=ls())
+library(ggmap)
+
 #map tutorial "https://www.nceas.ucsb.edu/sites/default/files/2020-04/ggmapCheatsheet.pdf"
 
 myLocation <- "University of Washington"
 myLocation <- c(lon = -95.3632715, lat = 29.7632836)
 myLocation <- c(-130, 30, -105, 50)
+
 #geocode("University of Washington")
 myMap<-get_map(location=myLocation, source="stamen", maptype="watercolor", crop=FALSE)
 ggmap(myMap)
 
 myMap1<-get_map(location=myLocation, source="stamen", maptype="toner", crop=TRUE)
 ggmap(myMap1)
-
 
 map<-get_googlemap("Montpellier, France", zoom=8, maptype="roadmap")
